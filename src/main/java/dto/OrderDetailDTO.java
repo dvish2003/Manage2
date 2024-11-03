@@ -1,15 +1,12 @@
 package dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
 public class OrderDetailDTO {
     private String OrderID;
     private String Item;
-    private int Qty;
+    private String Qty;
     private int Price;
 
-    public OrderDetailDTO(String orderID, String item, int qty, int price) {
+    public OrderDetailDTO(String orderID, String item, String qty, int price) {
         OrderID = orderID;
         Item = item;
         Qty = qty;
@@ -36,11 +33,11 @@ public class OrderDetailDTO {
         Item = item;
     }
 
-    public int getQty() {
+    public String getQty() {
         return Qty;
     }
 
-    public void setQty(int qty) {
+    public void setQty(String qty) {
         Qty = qty;
     }
 

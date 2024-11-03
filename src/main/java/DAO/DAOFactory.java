@@ -5,6 +5,7 @@ import BO.Order.OrderBOImpl;
 import DAO.Customer.CustomerDAOImpl;
 import DAO.Item.ItemDAOImpl;
 import DAO.Order.OrderDAOImpl;
+import DAO.PlaceOrderDAO.PlaceOrderDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -17,7 +18,7 @@ public class DAOFactory {
     }
 
     public enum DAOType {
-        Customer,Item,Order
+        Customer,Item,Order,PlaceOrder
     }
 
     public SuperDAO getDAO(DAOType daoType){
@@ -29,6 +30,8 @@ public class DAOFactory {
                 return new ItemDAOImpl();
                 case Order:
                     return  new OrderDAOImpl();
+                    case PlaceOrder:
+                        return  new PlaceOrderDAOImpl();
             default:
                 return null;
 

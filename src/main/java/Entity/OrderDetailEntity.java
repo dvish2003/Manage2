@@ -8,12 +8,14 @@ import java.math.BigDecimal;
 @Entity
 public class OrderDetailEntity {
     @Id
+    private String id;
     private String OrderID;
     private String Item;
     private int Qty;
     private int Price;
 
-    public OrderDetailEntity(String orderID, String item, int qty, int price) {
+    public OrderDetailEntity(String id, String orderID, String item, int qty, int price) {
+        this.id = id;
         OrderID = orderID;
         Item = item;
         Qty = qty;
@@ -21,7 +23,14 @@ public class OrderDetailEntity {
     }
 
     public OrderDetailEntity() {
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderID() {

@@ -1,7 +1,5 @@
 package dto;
 
-import jakarta.persistence.Id;
-
 public class ItemDTO {
 
     private String id;

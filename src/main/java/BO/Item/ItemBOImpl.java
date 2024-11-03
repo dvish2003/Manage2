@@ -49,3 +49,66 @@ return dtos;
         return  result;
     }
 }
+/*package lk.ijse.bo.custom.impl;
+
+import lk.ijse.bo.custom.ItemBO;
+import lk.ijse.dao.DAOFactory;
+import lk.ijse.dao.custom.ItemDAO;
+import lk.ijse.dto.ItemDto;
+import lk.ijse.entity.Customer;
+import lk.ijse.entity.Item;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class ItemBOImpl implements ItemBO {
+    ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAOFactory(DAOFactory.DAOType.ITEM);
+
+    @Override
+    public ItemDto searchByItemCode(String itemCode) {
+        Item item = itemDAO.get(itemCode);
+        ItemDto result = new ItemDto();
+        result.setCode(item.getCode());
+        result.setName(item.getName());
+        result.setQty(item.getQty());
+        result.setPrice(item.getPrice());
+        return  result;
+    }
+
+    @Override
+    public boolean save(ItemDto item) {
+        return itemDAO.save(new Item(item.getCode(),item.getName(),item.getPrice(),item.getQty()));
+    }
+
+    @Override
+    public boolean deleteItem(ItemDto item) {
+        return itemDAO.delete(new Item(item.getCode(),item.getName(),item.getPrice(),item.getQty()));
+    }
+
+    @Override
+    public boolean updateItem(ItemDto itemDto) {
+        return itemDAO.update(new Item(itemDto.getCode(), itemDto.getName(), itemDto.getPrice(), itemDto.getQty()));
+    }
+
+    @Override
+    public ItemDto getItem(int id) {
+        return null;
+    }
+
+    @Override
+    public List<ItemDto> getItems() {
+      List<ItemDto> itemDtos = new ArrayList<>();
+      List<Item> items = itemDAO.getAll();
+      for (Item item : items) {
+          itemDtos.add(new ItemDto(item.getCode(),item.getName(),item.getPrice(),item.getQty()));
+      }
+      return itemDtos;
+    }
+
+    @Override
+    public String generateNewItemId() {
+        return itemDAO.generateId();
+    }
+}*/
